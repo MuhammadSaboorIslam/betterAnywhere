@@ -1,0 +1,23 @@
+{
+   "manifest_version": 3,
+   "name": "PythonAnywhere Helper",
+   "version": "1.0",
+   "description": "Select and apply a custom theme on PythonAnywhere.",
+   "permissions": ["storage", "scripting"],
+   "host_permissions": ["*://*.pythonanywhere.com/*"],
+   "action": {
+     "default_popup": "popup.html"
+   },
+   "content_scripts": [
+     {
+       "matches": ["*://*.pythonanywhere.com/*"],
+       "js": ["content.js"]
+     }
+   ],
+   "web_accessible_resources": [
+    {
+      "resources": ["injected.js"],
+      "matches": ["*://*.pythonanywhere.com/*"]
+    }
+  ]
+ }
